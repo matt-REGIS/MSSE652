@@ -23,7 +23,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="dtj-QF-e1s" kind="modal" identifier="FromFisrtToSecond" id="n8K-7L-DJD"/>
+                                    <segue destination="dtj-QF-e1s" kind="modal" identifier="FromFirstToSecond" id="n8K-7L-DJD"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Scene" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6r-ja-zKb">
@@ -97,7 +97,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Zak-bt-ASJ" kind="push" id="Zu2-hp-Qyi"/>
+                                    <segue destination="Zak-bt-ASJ" kind="push" identifier="FromProgramsToCourses" id="Zu2-hp-Qyi"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
