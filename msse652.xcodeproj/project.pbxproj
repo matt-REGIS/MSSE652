@@ -22,6 +22,10 @@
 		7B49A9E01960B31100A03158 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B49A9BF1960B31100A03158 /* UIKit.framework */; };
 		7B49A9E81960B31100A03158 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B49A9E61960B31100A03158 /* InfoPlist.strings */; };
 		7B49A9EA1960B31100A03158 /* msse652Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B49A9E91960B31100A03158 /* msse652Tests.m */; };
+		7BB2AFBA1964874A00290375 /* TasksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB2AFB91964874A00290375 /* TasksViewController.m */; };
+		7BB2AFBD1964875F00290375 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB2AFBC1964875F00290375 /* ContactsViewController.m */; };
+		7BB2AFC0196487F900290375 /* SCISProgramsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB2AFBF196487F900290375 /* SCISProgramsTableViewController.m */; };
+		7BB2AFC31964880700290375 /* SCISCoursesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB2AFC21964880700290375 /* SCISCoursesTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +60,14 @@
 		7B49A9E51960B31100A03158 /* msse652Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "msse652Tests-Info.plist"; sourceTree = "<group>"; };
 		7B49A9E71960B31100A03158 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7B49A9E91960B31100A03158 /* msse652Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = msse652Tests.m; sourceTree = "<group>"; };
+		7BB2AFB81964874A00290375 /* TasksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TasksViewController.h; sourceTree = "<group>"; };
+		7BB2AFB91964874A00290375 /* TasksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TasksViewController.m; sourceTree = "<group>"; };
+		7BB2AFBB1964875F00290375 /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
+		7BB2AFBC1964875F00290375 /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
+		7BB2AFBE196487F900290375 /* SCISProgramsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCISProgramsTableViewController.h; sourceTree = "<group>"; };
+		7BB2AFBF196487F900290375 /* SCISProgramsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCISProgramsTableViewController.m; sourceTree = "<group>"; };
+		7BB2AFC11964880700290375 /* SCISCoursesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCISCoursesTableViewController.h; sourceTree = "<group>"; };
+		7BB2AFC21964880700290375 /* SCISCoursesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCISCoursesTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,13 +127,19 @@
 		7B49A9C11960B31100A03158 /* msse652 */ = {
 			isa = PBXGroup;
 			children = (
-				7B49A9CA1960B31100A03158 /* AppDelegate.h */,
-				7B49A9CB1960B31100A03158 /* AppDelegate.m */,
 				7B49A9CD1960B31100A03158 /* Main.storyboard */,
+				7BB2AFBB1964875F00290375 /* ContactsViewController.h */,
+				7BB2AFBC1964875F00290375 /* ContactsViewController.m */,
+				7BB2AFB81964874A00290375 /* TasksViewController.h */,
+				7BB2AFB91964874A00290375 /* TasksViewController.m */,
 				7B49A9D01960B31100A03158 /* FirstViewController.h */,
 				7B49A9D11960B31100A03158 /* FirstViewController.m */,
 				7B49A9D31960B31100A03158 /* SecondViewController.h */,
 				7B49A9D41960B31100A03158 /* SecondViewController.m */,
+				7BB2AFBE196487F900290375 /* SCISProgramsTableViewController.h */,
+				7BB2AFBF196487F900290375 /* SCISProgramsTableViewController.m */,
+				7BB2AFC11964880700290375 /* SCISCoursesTableViewController.h */,
+				7BB2AFC21964880700290375 /* SCISCoursesTableViewController.m */,
 				7B49A9D61960B31100A03158 /* Images.xcassets */,
 				7B49A9C21960B31100A03158 /* Supporting Files */,
 			);
@@ -131,6 +149,8 @@
 		7B49A9C21960B31100A03158 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7B49A9CA1960B31100A03158 /* AppDelegate.h */,
+				7B49A9CB1960B31100A03158 /* AppDelegate.m */,
 				7B49A9C31960B31100A03158 /* msse652-Info.plist */,
 				7B49A9C41960B31100A03158 /* InfoPlist.strings */,
 				7B49A9C71960B31100A03158 /* main.m */,
@@ -254,7 +274,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BB2AFC31964880700290375 /* SCISCoursesTableViewController.m in Sources */,
 				7B49A9D51960B31100A03158 /* SecondViewController.m in Sources */,
+				7BB2AFC0196487F900290375 /* SCISProgramsTableViewController.m in Sources */,
+				7BB2AFBD1964875F00290375 /* ContactsViewController.m in Sources */,
+				7BB2AFBA1964874A00290375 /* TasksViewController.m in Sources */,
 				7B49A9CC1960B31100A03158 /* AppDelegate.m in Sources */,
 				7B49A9D21960B31100A03158 /* FirstViewController.m in Sources */,
 				7B49A9C81960B31100A03158 /* main.m in Sources */,
