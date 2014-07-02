@@ -28,7 +28,7 @@
 
 - (IBAction)exitHere:(UIStoryboardSegue *)sender
 {
-    
+    NSLog(@"Exited Second View Controller");
 }
 
 @end
