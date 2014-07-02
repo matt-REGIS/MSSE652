@@ -10,4 +10,6 @@
 
 @interface FirstViewController : UIViewController
 
+- (IBAction)exitHere:(UIStoryboardSegue *)sender;
+
 @end
