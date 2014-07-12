@@ -7,12 +7,31 @@
 //
 
 #import "SCISProgramsTableViewController.h"
+#import "NSURLSessionService.h"
 
 @interface SCISProgramsTableViewController ()
-
+@property (strong, nonatomic) NSURLSessionService *service;
+@property (strong, nonatomic) NSArray *arrayPrograms;
 @end
 
 @implementation SCISProgramsTableViewController
+
+#pragma mark - Lazy Instantiations
+- (NSURLSessionService *)service
+{
+    if(!_service)
+        _service = [[NSURLSessionService alloc] init];
+    return _service;
+}
+
+- (NSArray *)arrayPrograms
+{
+    if(!_arrayPrograms) {
+        _arrayPrograms = [NSArray array];
+    }
+    return _arrayPrograms;
+}
+#pragma mark -
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -23,15 +42,15 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.service downloadProgramsForTableView:self.tableView];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,7 +70,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 1;
+    return [[self.service retrieveAllPrograms] count];
 }
 
 
@@ -65,7 +84,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CELLIDENTIFIER];
     }
     
-    cell.textLabel.text = @"Test Program";
+    Program *program = [[self.service retrieveAllPrograms] objectAtIndex:indexPath.row];
+    cell.textLabel.text = program.pName;
     return cell;
 }
 
