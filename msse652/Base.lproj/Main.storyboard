@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
@@ -16,9 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DAv-yl-37E">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DAv-yl-37E">
                                 <rect key="frame" x="91" y="83" width="139" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Goto Second Scene">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -26,17 +26,24 @@
                                     <segue destination="dtj-QF-e1s" kind="modal" identifier="FromFirstToSecond" id="n8K-7L-DJD"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Scene" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6r-ja-zKb">
-                                <rect key="frame" x="117" y="267" width="87" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="First Scene" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="RKe-M7-0kD">
+                                <rect key="frame" x="20" y="158" width="280" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DAv-yl-37E" firstAttribute="top" secondItem="Sm4-sa-slz" secondAttribute="bottom" constant="63" id="1sG-zX-mtj"/>
+                            <constraint firstItem="RKe-M7-0kD" firstAttribute="top" secondItem="DAv-yl-37E" secondAttribute="bottom" constant="45" id="8Gv-lI-baA"/>
+                            <constraint firstAttribute="trailing" secondItem="RKe-M7-0kD" secondAttribute="trailing" constant="20" symbolic="YES" id="Rtc-nj-fHf"/>
+                            <constraint firstItem="DAv-yl-37E" firstAttribute="centerX" secondItem="RKe-M7-0kD" secondAttribute="centerX" id="iOW-Je-ub3"/>
+                            <constraint firstItem="RKe-M7-0kD" firstAttribute="leading" secondItem="JYg-7n-AhS" secondAttribute="leading" constant="20" symbolic="YES" id="uWt-go-Be3"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" id="BpQ-JQ-bOD"/>
+                    <tabBarItem key="tabBarItem" title="First" image="first" id="BpQ-JQ-bOD"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ry-gb-2JJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="tft-Jf-wuo" userLabel="Exit" sceneMemberID="exit"/>
@@ -55,9 +62,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DvQ-Et-o6Q">
-                                <rect key="frame" x="91" y="83" width="139" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DvQ-Et-o6Q">
+                                <rect key="frame" x="91" y="83" width="138" height="30"/>
                                 <state key="normal" title="Exit">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -65,15 +71,23 @@
                                     <segue destination="tft-Jf-wuo" kind="unwind" identifier="FromSecondToFirst" unwindAction="exitHere:" id="222-UD-jvb"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Second Scene" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eg2-n9-gMH">
-                                <rect key="frame" x="104" y="273" width="113" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second Scene" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="J34-zi-OZa">
+                                <rect key="frame" x="20" y="158" width="280" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="J34-zi-OZa" secondAttribute="trailing" constant="20" symbolic="YES" id="EWI-Fe-7gk"/>
+                            <constraint firstItem="J34-zi-OZa" firstAttribute="top" secondItem="DvQ-Et-o6Q" secondAttribute="bottom" constant="45" id="Z9g-U5-Eda"/>
+                            <constraint firstItem="DvQ-Et-o6Q" firstAttribute="top" secondItem="jf7-fE-UfY" secondAttribute="bottom" constant="63" id="aI7-N6-pzV"/>
+                            <constraint firstItem="J34-zi-OZa" firstAttribute="leading" secondItem="aSV-3R-1tk" secondAttribute="leading" constant="20" symbolic="YES" id="mzL-pl-46z"/>
+                            <constraint firstItem="J34-zi-OZa" firstAttribute="centerX" secondItem="DvQ-Et-o6Q" secondAttribute="centerX" id="ojU-2H-XTz"/>
+                            <constraint firstItem="DvQ-Et-o6Q" firstAttribute="leading" secondItem="aSV-3R-1tk" secondAttribute="leading" constant="91" id="rCP-PI-HQX"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v4A-rF-LFg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -145,7 +159,7 @@
         <scene sceneID="WEg-GL-Ndg">
             <objects>
                 <navigationController definesPresentationContext="YES" id="Ujg-K3-wUV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Nav" id="oz2-WE-uXb"/>
+                    <tabBarItem key="tabBarItem" title="My Nav" image="second" id="oz2-WE-uXb"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9g7-3K-bgH">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
