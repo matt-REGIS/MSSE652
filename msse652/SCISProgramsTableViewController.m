@@ -8,6 +8,7 @@
 
 #import "SCISProgramsTableViewController.h"
 #import "NSURLSessionService.h"
+#import "SCISCoursesTableViewController.h"
 
 @interface SCISProgramsTableViewController ()
 @property (strong, nonatomic) NSURLSessionService *service;
@@ -33,24 +34,15 @@
 }
 #pragma mark -
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.service downloadProgramsForTableView:self.tableView];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.service downloadProgramsWithCoursesForTableView:self.tableView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -128,15 +120,22 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if([segue.identifier isEqualToString:@"FromProgramsToCourses"]) {
+        // Get the new view controller using [segue destinationViewController].
+        SCISCoursesTableViewController *vc = (SCISCoursesTableViewController *)[segue destinationViewController];
+        UITableViewCell *cell = (UITableViewCell*)sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+        // Pass the selected object to the new view controller.
+        Program *program = [[self.service retrieveAllPrograms] objectAtIndex:indexPath.row];
+        vc.program = program;
+    }
 }
-*/
+
 
 @end

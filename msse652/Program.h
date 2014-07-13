@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 /**
- SCIS Programs
+ SCIS Program
 */
 @interface Program : NSObject
 
@@ -17,6 +17,8 @@
 @property (strong, nonatomic) NSString *pId;
 /** Holds program name */
 @property (strong, nonatomic) NSString *pName;
+/** Holds program's courses */
+@property (strong, nonatomic) NSMutableArray *pCourses;
 
 /**
  Inits program with Id and name

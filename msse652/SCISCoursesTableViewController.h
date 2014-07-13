@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NSURLSessionService.h"
 
 @interface SCISCoursesTableViewController : UITableViewController
+
+@property (strong, nonatomic) Program *program;
 
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B00B0FD1972D6C9002DF8B0 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B00B0FC1972D6C9002DF8B0 /* Course.m */; };
 		7B49A9BC1960B31100A03158 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B49A9BB1960B31100A03158 /* Foundation.framework */; };
 		7B49A9BE1960B31100A03158 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B49A9BD1960B31100A03158 /* CoreGraphics.framework */; };
 		7B49A9C01960B31100A03158 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B49A9BF1960B31100A03158 /* UIKit.framework */; };
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B00B0FB1972D6C9002DF8B0 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		7B00B0FC1972D6C9002DF8B0 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 		7B49A9B81960B31100A03158 /* msse652.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = msse652.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B49A9BB1960B31100A03158 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7B49A9BD1960B31100A03158 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -180,6 +183,8 @@
 			children = (
 				7B7294B5196F579E00DCEFB9 /* Program.h */,
 				7B7294B6196F579E00DCEFB9 /* Program.m */,
+				7B00B0FB1972D6C9002DF8B0 /* Course.h */,
+				7B00B0FC1972D6C9002DF8B0 /* Course.m */,
 			);
 			name = domain;
 			sourceTree = "<group>";
@@ -313,6 +318,7 @@
 				7B7294B7196F579E00DCEFB9 /* Program.m in Sources */,
 				7BB2AFC31964880700290375 /* SCISCoursesTableViewController.m in Sources */,
 				7B49A9D51960B31100A03158 /* SecondViewController.m in Sources */,
+				7B00B0FD1972D6C9002DF8B0 /* Course.m in Sources */,
 				7BB2AFC0196487F900290375 /* SCISProgramsTableViewController.m in Sources */,
 				7BB2AFBD1964875F00290375 /* ContactsViewController.m in Sources */,
 				7BB2AFBA1964874A00290375 /* TasksViewController.m in Sources */,

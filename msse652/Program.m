@@ -17,9 +17,16 @@
     return self;
 }
 
+- (NSMutableArray *)pCourses
+{
+    if(!_pCourses)
+        _pCourses = [NSMutableArray array];
+    return _pCourses;
+}
+
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"Program ID: %@ withName: %@", self.pId, self.pName];
+    return [NSString stringWithFormat:@"Program ID: %@ withName: %@ withCourses: %@", self.pId, self.pName, self.pCourses];
 }
 
 @end

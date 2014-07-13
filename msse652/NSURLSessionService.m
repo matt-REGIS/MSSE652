@@ -8,8 +8,11 @@
 
 #import "NSURLSessionService.h"
 
-// URL to course provided link
-NSString *const kLocationURL = @"http://regisscis.net/Regis2/webresources/regis2.program";
+// Program URL to course provided link
+NSString *const kProgramLocationURL = @"http://regisscis.net/Regis2/webresources/regis2.program";
+
+// Course URL to course provided link
+NSString *const kCourseLocationURL = @"http://regisscis.net/Regis2/webresources/regis2.course";
 
 @implementation NSURLSessionService
 
@@ -21,7 +24,7 @@ NSString *const kLocationURL = @"http://regisscis.net/Regis2/webresources/regis2
     return _arrayPrograms;
 }
 
-- (void)downloadProgramsForTableView:(UITableView *)tableView
+- (void)downloadProgramsWithCoursesForTableView:(UITableView *)tableView
 {
     //create a session config
     NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -38,7 +41,7 @@ NSString *const kLocationURL = @"http://regisscis.net/Regis2/webresources/regis2
     //create session to download content over HTTP
     NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfig];
     //Create an HTTP GET request and call the handler upon completion
-    [[session dataTaskWithURL:[NSURL URLWithString:kLocationURL]
+    [[session dataTaskWithURL:[NSURL URLWithString:kProgramLocationURL]
             completionHandler:^(NSData *data, NSURLResponse *response,
                                 NSError *error) {
                 // handle response
@@ -52,8 +55,33 @@ NSString *const kLocationURL = @"http://regisscis.net/Regis2/webresources/regis2
                     Program *program = [[Program alloc] initWithId:pId andName:pName];
                     [self.arrayPrograms addObject:program];
                 }
+                [self getCourses:session];
                 [tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
 
+            }] resume];
+}
+
+- (void)getCourses:(NSURLSession *)session
+{
+    [[session dataTaskWithURL:[NSURL URLWithString:kCourseLocationURL]
+            completionHandler:^(NSData *data, NSURLResponse *response,
+                                NSError *error) {
+                // handle response
+                NSArray *json = [NSJSONSerialization
+                                 JSONObjectWithData:data
+                                 options:kNilOptions
+                                 error:&error];
+                for(id item in json) {
+                    NSString *cId = [item objectForKey:@"id"];
+                    NSString *cName = [item objectForKey:@"name"];
+                    NSDictionary *coursePId = [item objectForKey:@"pid"];
+                    Course *course = [[Course alloc] initWithId:cId andName:cName];
+                    for(Program *program in self.arrayPrograms) {
+                        if([(NSNumber *)[coursePId objectForKey:@"id"] integerValue] == [program.pId integerValue]) {
+                            [program.pCourses addObject:course];
+                        }
+                    }
+                }
             }] resume];
 }
 

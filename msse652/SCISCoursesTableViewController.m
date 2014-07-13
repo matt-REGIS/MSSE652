@@ -50,7 +50,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 1;
+    return self.program.pCourses.count;
 }
 
 
@@ -63,8 +63,11 @@
     if(cell==nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CELLIDENTIFIER];
     }
-    
-    cell.textLabel.text = @"Test Course";
+    Course *course = [self.program.pCourses objectAtIndex:indexPath.row];
+    cell.textLabel.text = course.cName;
+    cell.textLabel.numberOfLines = 1;
+    cell.textLabel.adjustsFontSizeToFitWidth = YES;
+    [cell.textLabel sizeToFit];
     return cell;
 }
 

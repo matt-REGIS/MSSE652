@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Program.h"
+#import "Course.h"
 
 /**
  Protocol definition for service
@@ -15,11 +16,11 @@
 @protocol Service <NSObject>
 
 /**
- Downloads SCIS Programs from course provided URL and reloads tableView
+ Downloads SCIS Programs with courses from course provided URL and reloads tableView
  @param tableView
         tableView to be reloaded after download
 */
-- (void)downloadProgramsForTableView:(UITableView *)tableView;
+- (void)downloadProgramsWithCoursesForTableView:(UITableView *)tableView;
 
 /**
  Gets all downloaded programs
