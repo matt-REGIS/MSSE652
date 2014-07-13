@@ -16,5 +16,6 @@ Week 2
 - Added new service - NSURLSessionService (downloads SCIS programs and courses for tableview)
 - Updated SCISProgramsTableViewController
 - Updated SCISCoursesTableViewController
+- Added tests
 
 
