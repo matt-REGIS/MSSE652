@@ -7,12 +7,19 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "NSURLSessionService.h"
 
 @interface msse652Tests : XCTestCase
 
 @end
 
 @implementation msse652Tests
+
+// Program URL to course provided link
+NSString *const kProgramLocationURL = @"http://regisscis.net/Regis2/webresources/regis2.program";
+
+// Course URL to course provided link
+NSString *const kCourseLocationURL = @"http://regisscis.net/Regis2/webresources/regis2.course";
 
 - (void)setUp
 {
@@ -26,9 +33,59 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testDownloadPrograms
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    NSLog(@"*** Starting %s ***", __PRETTY_FUNCTION__);
+    NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
+    sessionConfig.allowsCellularAccess = YES;
+    [sessionConfig setHTTPAdditionalHeaders: @{@"Accept": @"application/json"}];
+    sessionConfig.timeoutIntervalForRequest = 30.0;
+    sessionConfig.timeoutIntervalForResource = 60.0;
+    sessionConfig.HTTPMaximumConnectionsPerHost = 1;
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfig];
+    
+    hxRunInMainLoop(^(BOOL *done) {
+        [[session dataTaskWithURL:[NSURL URLWithString:kProgramLocationURL]
+                completionHandler:^(NSData *data, NSURLResponse *response,
+                                    NSError *error) {
+                    XCTAssertNotNil(data, @"No data for programs");
+                    *done = YES;
+                }] resume];
+    });
+    
+    NSLog(@"Ending %s", __PRETTY_FUNCTION__);
+}
+
+- (void)testDownloadCourses
+{
+    NSLog(@"*** Starting %s ***", __PRETTY_FUNCTION__);
+    NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
+    sessionConfig.allowsCellularAccess = YES;
+    [sessionConfig setHTTPAdditionalHeaders: @{@"Accept": @"application/json"}];
+    sessionConfig.timeoutIntervalForRequest = 30.0;
+    sessionConfig.timeoutIntervalForResource = 60.0;
+    sessionConfig.HTTPMaximumConnectionsPerHost = 1;
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfig];
+    
+    hxRunInMainLoop(^(BOOL *done) {
+        [[session dataTaskWithURL:[NSURL URLWithString:kCourseLocationURL]
+                completionHandler:^(NSData *data, NSURLResponse *response,
+                                    NSError *error) {
+                    XCTAssertNotNil(data, @"No data for courses");
+                    *done = YES;
+                }] resume];
+    });
+    
+    NSLog(@"Ending %s", __PRETTY_FUNCTION__);
+}
+
+static inline void hxRunInMainLoop(void(^block)(BOOL *done)) {
+    __block BOOL done = NO;
+    block(&done);
+    while (!done) {
+        [[NSRunLoop mainRunLoop] runUntilDate:
+         [NSDate dateWithTimeIntervalSinceNow:.1]];
+    }
 }
 
 @end
