@@ -11,7 +11,10 @@ Week 1
 
 Week 2
 
-- Added new domain - Programs (holds program information)
-- Added new service - NSURLSessionService (downloads SCIS programs for tableview)
-- Updated SCISProgramsTableViewController 
+- Added new domain - Program (holds program information)
+- Added new domain - Course (holds course information)
+- Added new service - NSURLSessionService (downloads SCIS programs and courses for tableview)
+- Updated SCISProgramsTableViewController
+- Updated SCISCoursesTableViewController
+
 
