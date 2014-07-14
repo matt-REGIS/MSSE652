@@ -1,25 +1,20 @@
 //
-//  msse652Tests.m
-//  msse652Tests
+//  NSURLSessionServiceTests.m
+//  msse652
 //
-//  Created by echolush on 6/29/14.
+//  Created by echolush on 7/14/14.
 //  Copyright (c) 2014 Matt Ozer. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
-#import "NSURLSessionService.h"
+#import "AFNetworking.h"
+#import "AFNetworkingServiceTests.m"
 
-@interface msse652Tests : XCTestCase
+@interface AFNetworkingServiceTests : XCTestCase
 
 @end
 
-@implementation msse652Tests
-
-// Program URL to course provided link
-NSString *const kProgramLocationURL = @"http://regisscis.net/Regis2/webresources/regis2.program";
-
-// Course URL to course provided link
-NSString *const kCourseLocationURL = @"http://regisscis.net/Regis2/webresources/regis2.course";
+@implementation AFNetworkingServiceTests
 
 - (void)setUp
 {
@@ -42,15 +37,18 @@ NSString *const kCourseLocationURL = @"http://regisscis.net/Regis2/webresources/
     sessionConfig.timeoutIntervalForRequest = 30.0;
     sessionConfig.timeoutIntervalForResource = 60.0;
     sessionConfig.HTTPMaximumConnectionsPerHost = 1;
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfig];
+    AFURLSessionManager *session = [[AFURLSessionManager alloc] initWithSessionConfiguration:sessionConfig];
+    
+    // Configure Manager
+    [session setResponseSerializer:[AFJSONResponseSerializer serializer]];
     
     hxRunInMainLoop(^(BOOL *done) {
-        [[session dataTaskWithURL:[NSURL URLWithString:kProgramLocationURL]
-                completionHandler:^(NSData *data, NSURLResponse *response,
-                                    NSError *error) {
-                    XCTAssertNotNil(data, @"No data for programs");
-                    *done = YES;
-                }] resume];
+        // Send Request
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:kProgramLocationURL]];
+        [[session dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+            XCTAssertNotNil(responseObject, @"No data for courses");
+            *done = YES;
+        }] resume];
     });
     
     NSLog(@"Ending %s", __PRETTY_FUNCTION__);
@@ -65,15 +63,20 @@ NSString *const kCourseLocationURL = @"http://regisscis.net/Regis2/webresources/
     sessionConfig.timeoutIntervalForRequest = 30.0;
     sessionConfig.timeoutIntervalForResource = 60.0;
     sessionConfig.HTTPMaximumConnectionsPerHost = 1;
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfig];
+    
+    
+    AFURLSessionManager *session = [[AFURLSessionManager alloc] initWithSessionConfiguration:sessionConfig];
+    
+    // Configure Manager
+    [session setResponseSerializer:[AFJSONResponseSerializer serializer]];
     
     hxRunInMainLoop(^(BOOL *done) {
-        [[session dataTaskWithURL:[NSURL URLWithString:kCourseLocationURL]
-                completionHandler:^(NSData *data, NSURLResponse *response,
-                                    NSError *error) {
-                    XCTAssertNotNil(data, @"No data for courses");
-                    *done = YES;
-                }] resume];
+        // Send Request
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:kCourseLocationURL]];
+        [[session dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+            XCTAssertNotNil(responseObject, @"No data for courses");
+            *done = YES;
+        }] resume];
     });
     
     NSLog(@"Ending %s", __PRETTY_FUNCTION__);

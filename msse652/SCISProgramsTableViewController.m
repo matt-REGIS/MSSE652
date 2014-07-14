@@ -7,21 +7,21 @@
 //
 
 #import "SCISProgramsTableViewController.h"
-#import "NSURLSessionService.h"
+#import "AFNetworkingService.h"
 #import "SCISCoursesTableViewController.h"
 
 @interface SCISProgramsTableViewController ()
-@property (strong, nonatomic) NSURLSessionService *service;
+@property (strong, nonatomic) AFNetworkingService *service;
 @property (strong, nonatomic) NSArray *arrayPrograms;
 @end
 
 @implementation SCISProgramsTableViewController
 
 #pragma mark - Lazy Instantiations
-- (NSURLSessionService *)service
+- (AFNetworkingService *)service
 {
     if(!_service)
-        _service = [[NSURLSessionService alloc] init];
+        _service = [[AFNetworkingService alloc] init];
     return _service;
 }
 

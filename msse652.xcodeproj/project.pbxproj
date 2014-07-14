@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F658A69931E4CC8BB835CBF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72CC6520F45E4D5A9EF29EF8 /* libPods.a */; };
 		7B00B0FD1972D6C9002DF8B0 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B00B0FC1972D6C9002DF8B0 /* Course.m */; };
 		7B49A9BC1960B31100A03158 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B49A9BB1960B31100A03158 /* Foundation.framework */; };
 		7B49A9BE1960B31100A03158 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B49A9BD1960B31100A03158 /* CoreGraphics.framework */; };
@@ -22,13 +23,16 @@
 		7B49A9DF1960B31100A03158 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B49A9BB1960B31100A03158 /* Foundation.framework */; };
 		7B49A9E01960B31100A03158 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B49A9BF1960B31100A03158 /* UIKit.framework */; };
 		7B49A9E81960B31100A03158 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B49A9E61960B31100A03158 /* InfoPlist.strings */; };
-		7B49A9EA1960B31100A03158 /* msse652Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B49A9E91960B31100A03158 /* msse652Tests.m */; };
+		7B49A9EA1960B31100A03158 /* NSURLSessionServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B49A9E91960B31100A03158 /* NSURLSessionServiceTests.m */; };
 		7B7294B7196F579E00DCEFB9 /* Program.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B7294B6196F579E00DCEFB9 /* Program.m */; };
 		7B9ADF9819670C38003AA716 /* NSURLSessionService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9ADF9719670C38003AA716 /* NSURLSessionService.m */; };
 		7BB2AFBA1964874A00290375 /* TasksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB2AFB91964874A00290375 /* TasksViewController.m */; };
 		7BB2AFBD1964875F00290375 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB2AFBC1964875F00290375 /* ContactsViewController.m */; };
 		7BB2AFC0196487F900290375 /* SCISProgramsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB2AFBF196487F900290375 /* SCISProgramsTableViewController.m */; };
 		7BB2AFC31964880700290375 /* SCISCoursesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB2AFC21964880700290375 /* SCISCoursesTableViewController.m */; };
+		7BC7253819743B680097FF1E /* AFNetworkingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC7253719743B680097FF1E /* AFNetworkingService.m */; };
+		7BC7253B19743C0D0097FF1E /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC7253A19743C0D0097FF1E /* Constants.m */; };
+		7BC7253D197446A30097FF1E /* AFNetworkingServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC7253C197446A30097FF1E /* AFNetworkingServiceTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08FBB17E47554735939E26EC /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		72CC6520F45E4D5A9EF29EF8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B00B0FB1972D6C9002DF8B0 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
 		7B00B0FC1972D6C9002DF8B0 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 		7B49A9B81960B31100A03158 /* msse652.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = msse652.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,7 +70,7 @@
 		7B49A9DD1960B31100A03158 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		7B49A9E51960B31100A03158 /* msse652Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "msse652Tests-Info.plist"; sourceTree = "<group>"; };
 		7B49A9E71960B31100A03158 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		7B49A9E91960B31100A03158 /* msse652Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = msse652Tests.m; sourceTree = "<group>"; };
+		7B49A9E91960B31100A03158 /* NSURLSessionServiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSURLSessionServiceTests.m; sourceTree = "<group>"; };
 		7B7294B5196F579E00DCEFB9 /* Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
 		7B7294B6196F579E00DCEFB9 /* Program.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Program.m; sourceTree = "<group>"; };
 		7B9ADF9419670BF4003AA716 /* Service.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
@@ -78,6 +84,11 @@
 		7BB2AFBF196487F900290375 /* SCISProgramsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCISProgramsTableViewController.m; sourceTree = "<group>"; };
 		7BB2AFC11964880700290375 /* SCISCoursesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCISCoursesTableViewController.h; sourceTree = "<group>"; };
 		7BB2AFC21964880700290375 /* SCISCoursesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCISCoursesTableViewController.m; sourceTree = "<group>"; };
+		7BC7253619743B680097FF1E /* AFNetworkingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkingService.h; sourceTree = "<group>"; };
+		7BC7253719743B680097FF1E /* AFNetworkingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkingService.m; sourceTree = "<group>"; };
+		7BC7253919743C0D0097FF1E /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		7BC7253A19743C0D0097FF1E /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		7BC7253C197446A30097FF1E /* AFNetworkingServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkingServiceTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +99,7 @@
 				7B49A9BE1960B31100A03158 /* CoreGraphics.framework in Frameworks */,
 				7B49A9C01960B31100A03158 /* UIKit.framework in Frameworks */,
 				7B49A9BC1960B31100A03158 /* Foundation.framework in Frameworks */,
+				6F658A69931E4CC8BB835CBF /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +123,7 @@
 				7B49A9E31960B31100A03158 /* msse652Tests */,
 				7B49A9BA1960B31100A03158 /* Frameworks */,
 				7B49A9B91960B31100A03158 /* Products */,
+				08FBB17E47554735939E26EC /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +143,7 @@
 				7B49A9BD1960B31100A03158 /* CoreGraphics.framework */,
 				7B49A9BF1960B31100A03158 /* UIKit.framework */,
 				7B49A9DD1960B31100A03158 /* XCTest.framework */,
+				72CC6520F45E4D5A9EF29EF8 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -156,6 +170,8 @@
 				7B49A9C41960B31100A03158 /* InfoPlist.strings */,
 				7B49A9C71960B31100A03158 /* main.m */,
 				7B49A9C91960B31100A03158 /* msse652-Prefix.pch */,
+				7BC7253919743C0D0097FF1E /* Constants.h */,
+				7BC7253A19743C0D0097FF1E /* Constants.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -163,7 +179,8 @@
 		7B49A9E31960B31100A03158 /* msse652Tests */ = {
 			isa = PBXGroup;
 			children = (
-				7B49A9E91960B31100A03158 /* msse652Tests.m */,
+				7B49A9E91960B31100A03158 /* NSURLSessionServiceTests.m */,
+				7BC7253C197446A30097FF1E /* AFNetworkingServiceTests.m */,
 				7B49A9E41960B31100A03158 /* Supporting Files */,
 			);
 			path = msse652Tests;
@@ -214,6 +231,8 @@
 				7B9ADF9419670BF4003AA716 /* Service.h */,
 				7B9ADF9619670C38003AA716 /* NSURLSessionService.h */,
 				7B9ADF9719670C38003AA716 /* NSURLSessionService.m */,
+				7BC7253619743B680097FF1E /* AFNetworkingService.h */,
+				7BC7253719743B680097FF1E /* AFNetworkingService.m */,
 			);
 			name = service;
 			sourceTree = "<group>";
@@ -225,9 +244,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7B49A9ED1960B31100A03158 /* Build configuration list for PBXNativeTarget "msse652" */;
 			buildPhases = (
+				F16E7681C2C6482EA7C27C43 /* Check Pods Manifest.lock */,
 				7B49A9B41960B31100A03158 /* Sources */,
 				7B49A9B51960B31100A03158 /* Frameworks */,
 				7B49A9B61960B31100A03158 /* Resources */,
+				8C793852125047DC99270E1C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -310,6 +331,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8C793852125047DC99270E1C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F16E7681C2C6482EA7C27C43 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7B49A9B41960B31100A03158 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -319,8 +373,10 @@
 				7BB2AFC31964880700290375 /* SCISCoursesTableViewController.m in Sources */,
 				7B49A9D51960B31100A03158 /* SecondViewController.m in Sources */,
 				7B00B0FD1972D6C9002DF8B0 /* Course.m in Sources */,
+				7BC7253819743B680097FF1E /* AFNetworkingService.m in Sources */,
 				7BB2AFC0196487F900290375 /* SCISProgramsTableViewController.m in Sources */,
 				7BB2AFBD1964875F00290375 /* ContactsViewController.m in Sources */,
+				7BC7253B19743C0D0097FF1E /* Constants.m in Sources */,
 				7BB2AFBA1964874A00290375 /* TasksViewController.m in Sources */,
 				7B9ADF9819670C38003AA716 /* NSURLSessionService.m in Sources */,
 				7B49A9CC1960B31100A03158 /* AppDelegate.m in Sources */,
@@ -333,7 +389,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B49A9EA1960B31100A03158 /* msse652Tests.m in Sources */,
+				7B49A9EA1960B31100A03158 /* NSURLSessionServiceTests.m in Sources */,
+				7BC7253D197446A30097FF1E /* AFNetworkingServiceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +504,7 @@
 		};
 		7B49A9EE1960B31100A03158 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08FBB17E47554735939E26EC /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -460,6 +518,7 @@
 		};
 		7B49A9EF1960B31100A03158 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08FBB17E47554735939E26EC /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -473,6 +532,7 @@
 		};
 		7B49A9F11960B31100A03158 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08FBB17E47554735939E26EC /* Pods.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/msse652.app/msse652";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -495,6 +555,7 @@
 		};
 		7B49A9F21960B31100A03158 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08FBB17E47554735939E26EC /* Pods.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/msse652.app/msse652";
 				FRAMEWORK_SEARCH_PATHS = (
