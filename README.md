@@ -18,4 +18,7 @@ Week 2
 - Updated SCISCoursesTableViewController
 - Added tests
 
+Week 3
 
+- Added AFNetworkingService
+- Added AFNetworkingServiceTests
