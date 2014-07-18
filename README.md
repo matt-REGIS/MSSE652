@@ -22,3 +22,4 @@ Week 3
 
 - Added AFNetworkingService
 - Added AFNetworkingServiceTests
+- Added comments
