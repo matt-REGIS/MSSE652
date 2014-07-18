@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ ContactsViewController - First tab in TabViewController
+ */
 @interface ContactsViewController : UIViewController
 
 @end

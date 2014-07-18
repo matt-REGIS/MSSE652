@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ TasksViewController - Second tab in TabViewController
+ */
 @interface TasksViewController : UIViewController
 
 @end

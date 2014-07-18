@@ -43,20 +43,29 @@
                                       JSONObjectWithData:data
                                       options:kNilOptions
                                       error:&error];
+                //iterate through the json array
                 for(id item in json) {
+                    //get the id
                     NSString *pId = [item objectForKey:@"id"];
+                    // get the name
                     NSString *pName = [item objectForKey:@"name"];
+                    //Create a program object
                     Program *program = [[Program alloc] initWithId:pId andName:pName];
+                    //add to array
                     [self.arrayPrograms addObject:program];
                 }
+                //Get courses
                 [self getCourses:session];
+                //Reload tableview with new data
                 [tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
 
             }] resume];
 }
 
+//Download courses
 - (void)getCourses:(NSURLSession *)session
 {
+    //Create an HTTP GET request and call the handler upon completion
     [[session dataTaskWithURL:[NSURL URLWithString:kCourseLocationURL]
             completionHandler:^(NSData *data, NSURLResponse *response,
                                 NSError *error) {
@@ -65,12 +74,19 @@
                                  JSONObjectWithData:data
                                  options:kNilOptions
                                  error:&error];
+                //iterate through the json array
                 for(id item in json) {
+                    //get course id
                     NSString *cId = [item objectForKey:@"id"];
+                    //get course name
                     NSString *cName = [item objectForKey:@"name"];
+                    //get course's program
                     NSDictionary *coursePId = [item objectForKey:@"pid"];
+                    //create a course
                     Course *course = [[Course alloc] initWithId:cId andName:cName];
+                    //iterate through all programs
                     for(Program *program in self.arrayPrograms) {
+                        //add course to program's courses if id's match
                         if([(NSNumber *)[coursePId objectForKey:@"id"] integerValue] == [program.pId integerValue]) {
                             [program.pCourses addObject:course];
                         }

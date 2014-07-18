@@ -9,8 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "NSURLSessionService.h"
 
+/**
+ SCISCoursesTableViewController - Shows SCIS courses in table view
+ */
 @interface SCISCoursesTableViewController : UITableViewController
 
+/**
+ Holds the program that was sent when cell did select from 
+ SCISProgramsTableViewController
+ */
 @property (strong, nonatomic) Program *program;
 
 @end

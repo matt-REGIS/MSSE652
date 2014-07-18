@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "Service.h"
 
+/**
+ NSURLSessionService - Service to get programs and courses
+ */
 @interface NSURLSessionService : NSObject <Service>
 
 /**Holds Programs*/

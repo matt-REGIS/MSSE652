@@ -14,24 +14,9 @@
 
 @implementation SCISCoursesTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,17 +41,26 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //A string identifying the cell object to be reused
     static NSString *CELLIDENTIFIER = @"CELLIDENTIFIER";
+    //Returns a reusable table-view cell object for the specified reuse identifier
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELLIDENTIFIER forIndexPath:indexPath];
     
-    // Configure the cell...
+    // Configure the cell if nil
     if(cell==nil) {
+        //Initializes a table cell with a subtitle style and a reuse identifier
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CELLIDENTIFIER];
     }
+    
+    //Get the course for the cell
     Course *course = [self.program.pCourses objectAtIndex:indexPath.row];
+    //Set the cell's label text to course name
     cell.textLabel.text = course.cName;
+    //Set the number of lines in cell's label into one in order to use size to fit function
     cell.textLabel.numberOfLines = 1;
+    //Enable adjusts to font size for the cell label
     cell.textLabel.adjustsFontSizeToFitWidth = YES;
+    //Resize the cell's label so that it uses the most appropriate amount of space
     [cell.textLabel sizeToFit];
     return cell;
 }

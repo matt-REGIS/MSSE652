@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "Service.h"
 
+/**
+ AFNetworkingService - Service to get all programs and courses
+ */
 @interface AFNetworkingService : NSObject <Service>
 
 /**Holds Programs*/

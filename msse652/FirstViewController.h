@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ UIViewController for first view
+ Demonstrates presenting second view controller modally
+ */
 @interface FirstViewController : UIViewController
 
+/**
+ Exit method for Second View Controller
+ @param sender
+        Associated segue from the storyboard
+ */
 - (IBAction)exitHere:(UIStoryboardSegue *)sender;
 
 @end

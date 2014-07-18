@@ -34,6 +34,7 @@
     //The max number of simultaneous connections to make to a given host
     sessionConfig.HTTPMaximumConnectionsPerHost = 1;
     
+    //create a session from the session config
     AFURLSessionManager *session = [[AFURLSessionManager alloc] initWithSessionConfiguration:sessionConfig];
     
     // Configure Manager
@@ -41,31 +42,46 @@
     
     // Send Request
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:kProgramLocationURL]];
+    //download data with completion block
     [[session dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         // Process Response Object
         for(id item in responseObject) {
-            //NSLog(@"item: %@", item);
+            //get id
             NSString *pId = [item objectForKey:@"id"];
+            //get name
             NSString *pName = [item objectForKey:@"name"];
+            //create a program
             Program *program = [[Program alloc] initWithId:pId andName:pName];
+            //add program to array
             [self.arrayPrograms addObject:program];
         }
+        //get courses
         [self getCourses:session];
+        //refresh table view with new data
         [tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
     }] resume];
 }
 
+//Download courses
 - (void)getCourses:(AFURLSessionManager *)session
 {
+    //Request for courses
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:kCourseLocationURL]];
+    //download data with completion block
     [[session dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         // Process Response Object
         for(id item in responseObject) {
+            //get course id
             NSString *cId = [item objectForKey:@"id"];
+            //get course name
             NSString *cName = [item objectForKey:@"name"];
+            //get course's program id
             NSDictionary *coursePId = [item objectForKey:@"pid"];
+            //create a course
             Course *course = [[Course alloc] initWithId:cId andName:cName];
+            //iterate through all programs
             for(Program *program in self.arrayPrograms) {
+                //add course to program if ids match
                 if([(NSNumber *)[coursePId objectForKey:@"id"] integerValue] == [program.pId integerValue]) {
                     [program.pCourses addObject:course];
                 }

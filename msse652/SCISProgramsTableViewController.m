@@ -11,7 +11,9 @@
 #import "SCISCoursesTableViewController.h"
 
 @interface SCISProgramsTableViewController ()
+//Holds the service variable
 @property (strong, nonatomic) AFNetworkingService *service;
+//Array to store programs
 @property (strong, nonatomic) NSArray *arrayPrograms;
 @end
 
@@ -68,15 +70,20 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //A string identifying the cell object to be reused
     static NSString *CELLIDENTIFIER = @"CELLIDENTIFIER";
+    //Returns a reusable table-view cell object for the specified reuse identifier
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELLIDENTIFIER forIndexPath:indexPath];
     
-    // Configure the cell...
+    // Configure the cell if nil
     if(cell==nil) {
+        //Initializes a table cell with a subtitle style and a reuse identifier
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CELLIDENTIFIER];
     }
     
+    //Get the program for the cell
     Program *program = [[self.service retrieveAllPrograms] objectAtIndex:indexPath.row];
+    //Set the label for the cell to program name
     cell.textLabel.text = program.pName;
     return cell;
 }
@@ -126,12 +133,15 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    //if the identifier for the segue object is FromProgramsToCourses
     if([segue.identifier isEqualToString:@"FromProgramsToCourses"]) {
-        // Get the new view controller using [segue destinationViewController].
+        // Get the new view controller using [segue destinationViewController]
         SCISCoursesTableViewController *vc = (SCISCoursesTableViewController *)[segue destinationViewController];
+        //Get the clicked cell from sender
         UITableViewCell *cell = (UITableViewCell*)sender;
+        //Find the indexpath of the clicked cell
         NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-        // Pass the selected object to the new view controller.
+        // Pass the selected program to SCISCoursesTableViewController
         Program *program = [[self.service retrieveAllPrograms] objectAtIndex:indexPath.row];
         vc.program = program;
     }
