@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6F658A69931E4CC8BB835CBF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72CC6520F45E4D5A9EF29EF8 /* libPods.a */; };
+		7B1BC1AD1984047400A202ED /* MSSE652Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1BC1AC1984047400A202ED /* MSSE652Tests.m */; };
 		7B49A9BC1960B31100A03158 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B49A9BB1960B31100A03158 /* Foundation.framework */; };
 		7B49A9BE1960B31100A03158 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B49A9BD1960B31100A03158 /* CoreGraphics.framework */; };
 		7B49A9C01960B31100A03158 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B49A9BF1960B31100A03158 /* UIKit.framework */; };
@@ -22,7 +23,6 @@
 		7B49A9DF1960B31100A03158 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B49A9BB1960B31100A03158 /* Foundation.framework */; };
 		7B49A9E01960B31100A03158 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B49A9BF1960B31100A03158 /* UIKit.framework */; };
 		7B49A9E81960B31100A03158 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B49A9E61960B31100A03158 /* InfoPlist.strings */; };
-		7B49A9EA1960B31100A03158 /* NSURLSessionServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B49A9E91960B31100A03158 /* NSURLSessionServiceTests.m */; };
 		7BB0F57F1978949800DF7E1A /* Program.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB0F57E1978949800DF7E1A /* Program.m */; };
 		7BB0F5821978949800DF7E1A /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB0F5811978949800DF7E1A /* Course.m */; };
 		7BB2AFBA1964874A00290375 /* TasksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB2AFB91964874A00290375 /* TasksViewController.m */; };
@@ -51,6 +51,7 @@
 /* Begin PBXFileReference section */
 		08FBB17E47554735939E26EC /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		72CC6520F45E4D5A9EF29EF8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B1BC1AC1984047400A202ED /* MSSE652Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSE652Tests.m; sourceTree = "<group>"; };
 		7B49A9B81960B31100A03158 /* msse652.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = msse652.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B49A9BB1960B31100A03158 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7B49A9BD1960B31100A03158 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -71,7 +72,6 @@
 		7B49A9DD1960B31100A03158 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		7B49A9E51960B31100A03158 /* msse652Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "msse652Tests-Info.plist"; sourceTree = "<group>"; };
 		7B49A9E71960B31100A03158 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		7B49A9E91960B31100A03158 /* NSURLSessionServiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSURLSessionServiceTests.m; sourceTree = "<group>"; };
 		7BB0F57D1978949800DF7E1A /* Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
 		7BB0F57E1978949800DF7E1A /* Program.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Program.m; sourceTree = "<group>"; };
 		7BB0F5801978949800DF7E1A /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
@@ -191,7 +191,7 @@
 		7B49A9E31960B31100A03158 /* msse652Tests */ = {
 			isa = PBXGroup;
 			children = (
-				7B49A9E91960B31100A03158 /* NSURLSessionServiceTests.m */,
+				7B1BC1AC1984047400A202ED /* MSSE652Tests.m */,
 				7B49A9E41960B31100A03158 /* Supporting Files */,
 			);
 			path = msse652Tests;
@@ -388,7 +388,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B49A9EA1960B31100A03158 /* NSURLSessionServiceTests.m in Sources */,
+				7B1BC1AD1984047400A202ED /* MSSE652Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
