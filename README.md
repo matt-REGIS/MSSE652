@@ -22,3 +22,11 @@ Week 3
 
 - Added AFNetworkingService
 - Added AFNetworkingServiceTests
+
+Week 4
+
+- Implement Core Data
+- Create Program and Course managed objects
+- Implement RestKit using CocoaPods
+- Map Program and Course using RestKit to Core Data
+
