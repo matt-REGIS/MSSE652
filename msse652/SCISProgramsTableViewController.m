@@ -7,42 +7,43 @@
 //
 
 #import "SCISProgramsTableViewController.h"
-#import "AFNetworkingService.h"
 #import "SCISCoursesTableViewController.h"
+#import <RestKit/RestKit.h>
+#import "Program.h"
 
 @interface SCISProgramsTableViewController ()
-@property (strong, nonatomic) AFNetworkingService *service;
-@property (strong, nonatomic) NSArray *arrayPrograms;
+//Fetched results controller for retrieving objects from core data
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsControllerProgram;
 @end
 
 @implementation SCISProgramsTableViewController
 
 #pragma mark - Lazy Instantiations
-- (AFNetworkingService *)service
+- (NSFetchedResultsController *)fetchedResultsControllerProgram
 {
-    if(!_service)
-        _service = [[AFNetworkingService alloc] init];
-    return _service;
-}
-
-- (NSArray *)arrayPrograms
-{
-    if(!_arrayPrograms) {
-        _arrayPrograms = [NSArray array];
+    //if not instantiate fetched results controller
+    if(!_fetchedResultsControllerProgram) {
+        //Returns a fetch request configured with a Program entity
+        NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass([Program class])];
+        //Describe how to order objects
+        fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
+        //init
+        self.fetchedResultsControllerProgram = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[RKManagedObjectStore defaultStore].mainQueueManagedObjectContext sectionNameKeyPath:@"name" cacheName:@"Program"];
+        //For error information
+        NSError *error;
+        //Access the fetched objects
+        [self.fetchedResultsControllerProgram performFetch:&error];
+        //Generate an assertion for a given condition
+        NSAssert(!error, @"Error performing fetch request: %@", error);
     }
-    return _arrayPrograms;
+    return _fetchedResultsControllerProgram;
 }
-#pragma mark -
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
+#pragma mark -
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.service downloadProgramsWithCoursesForTableView:self.tableView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,22 +63,27 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [[self.service retrieveAllPrograms] count];
+    return self.fetchedResultsControllerProgram.fetchedObjects.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //A string identifying the cell object to be reused
     static NSString *CELLIDENTIFIER = @"CELLIDENTIFIER";
+    //Returns a reusable table-view cell object for the specified reuse identifier
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELLIDENTIFIER forIndexPath:indexPath];
     
-    // Configure the cell...
+    // Configure the cell if nil
     if(cell==nil) {
+        //Initializes a table cell with a subtitle style and a reuse identifier
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CELLIDENTIFIER];
     }
     
-    Program *program = [[self.service retrieveAllPrograms] objectAtIndex:indexPath.row];
-    cell.textLabel.text = program.pName;
+    //Get the program for the cell
+    Program *program = (Program *)[[self.fetchedResultsControllerProgram fetchedObjects] objectAtIndex:indexPath.row];
+    //Set the label for the cell to program name
+    cell.textLabel.text = program.name;
     return cell;
 }
 
@@ -126,16 +132,28 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    //if the identifier for the segue object is FromProgramsToCourses
     if([segue.identifier isEqualToString:@"FromProgramsToCourses"]) {
         // Get the new view controller using [segue destinationViewController].
         SCISCoursesTableViewController *vc = (SCISCoursesTableViewController *)[segue destinationViewController];
+        //Get the clicked cell from sender
         UITableViewCell *cell = (UITableViewCell*)sender;
+        //Find the indexpath of the clicked cell
         NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-        // Pass the selected object to the new view controller.
-        Program *program = [[self.service retrieveAllPrograms] objectAtIndex:indexPath.row];
+        // Pass the selected program to SCISCoursesTableViewController
+        Program *program = [[self.fetchedResultsControllerProgram fetchedObjects] objectAtIndex:indexPath.row];
         vc.program = program;
     }
 }
 
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+    // The fetch controller is about to start sending change notifications, so prepare the table view for updates.
+    [self.tableView beginUpdates];
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    // The fetch controller has sent all current change notifications, so tell the table view to process all updates.
+    [self.tableView endUpdates];
+}
 
 @end

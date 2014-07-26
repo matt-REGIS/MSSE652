@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6F658A69931E4CC8BB835CBF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72CC6520F45E4D5A9EF29EF8 /* libPods.a */; };
-		7B00B0FD1972D6C9002DF8B0 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B00B0FC1972D6C9002DF8B0 /* Course.m */; };
 		7B49A9BC1960B31100A03158 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B49A9BB1960B31100A03158 /* Foundation.framework */; };
 		7B49A9BE1960B31100A03158 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B49A9BD1960B31100A03158 /* CoreGraphics.framework */; };
 		7B49A9C01960B31100A03158 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B49A9BF1960B31100A03158 /* UIKit.framework */; };
@@ -24,15 +23,19 @@
 		7B49A9E01960B31100A03158 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B49A9BF1960B31100A03158 /* UIKit.framework */; };
 		7B49A9E81960B31100A03158 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B49A9E61960B31100A03158 /* InfoPlist.strings */; };
 		7B49A9EA1960B31100A03158 /* NSURLSessionServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B49A9E91960B31100A03158 /* NSURLSessionServiceTests.m */; };
-		7B7294B7196F579E00DCEFB9 /* Program.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B7294B6196F579E00DCEFB9 /* Program.m */; };
-		7B9ADF9819670C38003AA716 /* NSURLSessionService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9ADF9719670C38003AA716 /* NSURLSessionService.m */; };
+		7BB0F57F1978949800DF7E1A /* Program.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB0F57E1978949800DF7E1A /* Program.m */; };
+		7BB0F5821978949800DF7E1A /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB0F5811978949800DF7E1A /* Course.m */; };
 		7BB2AFBA1964874A00290375 /* TasksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB2AFB91964874A00290375 /* TasksViewController.m */; };
 		7BB2AFBD1964875F00290375 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB2AFBC1964875F00290375 /* ContactsViewController.m */; };
 		7BB2AFC0196487F900290375 /* SCISProgramsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB2AFBF196487F900290375 /* SCISProgramsTableViewController.m */; };
 		7BB2AFC31964880700290375 /* SCISCoursesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB2AFC21964880700290375 /* SCISCoursesTableViewController.m */; };
-		7BC7253819743B680097FF1E /* AFNetworkingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC7253719743B680097FF1E /* AFNetworkingService.m */; };
+		7BB8CCFE197482E400EA80CF /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB8CCFD197482E400EA80CF /* MobileCoreServices.framework */; };
+		7BB8CD00197482EB00EA80CF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB8CCFF197482EB00EA80CF /* Security.framework */; };
+		7BB8CD02197482F300EA80CF /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB8CD01197482F300EA80CF /* CFNetwork.framework */; };
+		7BB8CD04197482FB00EA80CF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB8CD03197482FB00EA80CF /* SystemConfiguration.framework */; };
+		7BB8CD061974830500EA80CF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB8CD051974830500EA80CF /* CoreData.framework */; };
 		7BC7253B19743C0D0097FF1E /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC7253A19743C0D0097FF1E /* Constants.m */; };
-		7BC7253D197446A30097FF1E /* AFNetworkingServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC7253C197446A30097FF1E /* AFNetworkingServiceTests.m */; };
+		7BF5061619745D54009153BC /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7BF5061419745D54009153BC /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,8 +51,6 @@
 /* Begin PBXFileReference section */
 		08FBB17E47554735939E26EC /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		72CC6520F45E4D5A9EF29EF8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B00B0FB1972D6C9002DF8B0 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
-		7B00B0FC1972D6C9002DF8B0 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 		7B49A9B81960B31100A03158 /* msse652.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = msse652.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B49A9BB1960B31100A03158 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7B49A9BD1960B31100A03158 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -71,11 +72,10 @@
 		7B49A9E51960B31100A03158 /* msse652Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "msse652Tests-Info.plist"; sourceTree = "<group>"; };
 		7B49A9E71960B31100A03158 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7B49A9E91960B31100A03158 /* NSURLSessionServiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSURLSessionServiceTests.m; sourceTree = "<group>"; };
-		7B7294B5196F579E00DCEFB9 /* Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
-		7B7294B6196F579E00DCEFB9 /* Program.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Program.m; sourceTree = "<group>"; };
-		7B9ADF9419670BF4003AA716 /* Service.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
-		7B9ADF9619670C38003AA716 /* NSURLSessionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSURLSessionService.h; sourceTree = "<group>"; };
-		7B9ADF9719670C38003AA716 /* NSURLSessionService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSURLSessionService.m; sourceTree = "<group>"; };
+		7BB0F57D1978949800DF7E1A /* Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
+		7BB0F57E1978949800DF7E1A /* Program.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Program.m; sourceTree = "<group>"; };
+		7BB0F5801978949800DF7E1A /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		7BB0F5811978949800DF7E1A /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 		7BB2AFB81964874A00290375 /* TasksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TasksViewController.h; sourceTree = "<group>"; };
 		7BB2AFB91964874A00290375 /* TasksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TasksViewController.m; sourceTree = "<group>"; };
 		7BB2AFBB1964875F00290375 /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
@@ -84,11 +84,14 @@
 		7BB2AFBF196487F900290375 /* SCISProgramsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCISProgramsTableViewController.m; sourceTree = "<group>"; };
 		7BB2AFC11964880700290375 /* SCISCoursesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCISCoursesTableViewController.h; sourceTree = "<group>"; };
 		7BB2AFC21964880700290375 /* SCISCoursesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCISCoursesTableViewController.m; sourceTree = "<group>"; };
-		7BC7253619743B680097FF1E /* AFNetworkingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkingService.h; sourceTree = "<group>"; };
-		7BC7253719743B680097FF1E /* AFNetworkingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkingService.m; sourceTree = "<group>"; };
+		7BB8CCFD197482E400EA80CF /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		7BB8CCFF197482EB00EA80CF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		7BB8CD01197482F300EA80CF /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		7BB8CD03197482FB00EA80CF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		7BB8CD051974830500EA80CF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		7BC7253919743C0D0097FF1E /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		7BC7253A19743C0D0097FF1E /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
-		7BC7253C197446A30097FF1E /* AFNetworkingServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkingServiceTests.m; sourceTree = "<group>"; };
+		7BF5061519745D54009153BC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +99,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BB8CD061974830500EA80CF /* CoreData.framework in Frameworks */,
+				7BB8CD04197482FB00EA80CF /* SystemConfiguration.framework in Frameworks */,
+				7BB8CD02197482F300EA80CF /* CFNetwork.framework in Frameworks */,
+				7BB8CD00197482EB00EA80CF /* Security.framework in Frameworks */,
+				7BB8CCFE197482E400EA80CF /* MobileCoreServices.framework in Frameworks */,
 				7B49A9BE1960B31100A03158 /* CoreGraphics.framework in Frameworks */,
 				7B49A9C01960B31100A03158 /* UIKit.framework in Frameworks */,
 				7B49A9BC1960B31100A03158 /* Foundation.framework in Frameworks */,
@@ -139,6 +147,11 @@
 		7B49A9BA1960B31100A03158 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7BB8CD051974830500EA80CF /* CoreData.framework */,
+				7BB8CD03197482FB00EA80CF /* SystemConfiguration.framework */,
+				7BB8CD01197482F300EA80CF /* CFNetwork.framework */,
+				7BB8CCFF197482EB00EA80CF /* Security.framework */,
+				7BB8CCFD197482E400EA80CF /* MobileCoreServices.framework */,
 				7B49A9BB1960B31100A03158 /* Foundation.framework */,
 				7B49A9BD1960B31100A03158 /* CoreGraphics.framework */,
 				7B49A9BF1960B31100A03158 /* UIKit.framework */,
@@ -153,7 +166,6 @@
 			children = (
 				7B49A9CD1960B31100A03158 /* Main.storyboard */,
 				7B7294B8196F57AA00DCEFB9 /* domain */,
-				7B9ADF9519670C01003AA716 /* service */,
 				7B9ADF9319670BBA003AA716 /* controllers */,
 				7B49A9D61960B31100A03158 /* Images.xcassets */,
 				7B49A9C21960B31100A03158 /* Supporting Files */,
@@ -180,7 +192,6 @@
 			isa = PBXGroup;
 			children = (
 				7B49A9E91960B31100A03158 /* NSURLSessionServiceTests.m */,
-				7BC7253C197446A30097FF1E /* AFNetworkingServiceTests.m */,
 				7B49A9E41960B31100A03158 /* Supporting Files */,
 			);
 			path = msse652Tests;
@@ -198,10 +209,11 @@
 		7B7294B8196F57AA00DCEFB9 /* domain */ = {
 			isa = PBXGroup;
 			children = (
-				7B7294B5196F579E00DCEFB9 /* Program.h */,
-				7B7294B6196F579E00DCEFB9 /* Program.m */,
-				7B00B0FB1972D6C9002DF8B0 /* Course.h */,
-				7B00B0FC1972D6C9002DF8B0 /* Course.m */,
+				7BF5061419745D54009153BC /* Model.xcdatamodeld */,
+				7BB0F5801978949800DF7E1A /* Course.h */,
+				7BB0F5811978949800DF7E1A /* Course.m */,
+				7BB0F57D1978949800DF7E1A /* Program.h */,
+				7BB0F57E1978949800DF7E1A /* Program.m */,
 			);
 			name = domain;
 			sourceTree = "<group>";
@@ -223,18 +235,6 @@
 				7BB2AFC21964880700290375 /* SCISCoursesTableViewController.m */,
 			);
 			name = controllers;
-			sourceTree = "<group>";
-		};
-		7B9ADF9519670C01003AA716 /* service */ = {
-			isa = PBXGroup;
-			children = (
-				7B9ADF9419670BF4003AA716 /* Service.h */,
-				7B9ADF9619670C38003AA716 /* NSURLSessionService.h */,
-				7B9ADF9719670C38003AA716 /* NSURLSessionService.m */,
-				7BC7253619743B680097FF1E /* AFNetworkingService.h */,
-				7BC7253719743B680097FF1E /* AFNetworkingService.m */,
-			);
-			name = service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,16 +369,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B7294B7196F579E00DCEFB9 /* Program.m in Sources */,
 				7BB2AFC31964880700290375 /* SCISCoursesTableViewController.m in Sources */,
+				7BB0F57F1978949800DF7E1A /* Program.m in Sources */,
 				7B49A9D51960B31100A03158 /* SecondViewController.m in Sources */,
-				7B00B0FD1972D6C9002DF8B0 /* Course.m in Sources */,
-				7BC7253819743B680097FF1E /* AFNetworkingService.m in Sources */,
+				7BF5061619745D54009153BC /* Model.xcdatamodeld in Sources */,
+				7BB0F5821978949800DF7E1A /* Course.m in Sources */,
 				7BB2AFC0196487F900290375 /* SCISProgramsTableViewController.m in Sources */,
 				7BB2AFBD1964875F00290375 /* ContactsViewController.m in Sources */,
 				7BC7253B19743C0D0097FF1E /* Constants.m in Sources */,
 				7BB2AFBA1964874A00290375 /* TasksViewController.m in Sources */,
-				7B9ADF9819670C38003AA716 /* NSURLSessionService.m in Sources */,
 				7B49A9CC1960B31100A03158 /* AppDelegate.m in Sources */,
 				7B49A9D21960B31100A03158 /* FirstViewController.m in Sources */,
 				7B49A9C81960B31100A03158 /* main.m in Sources */,
@@ -390,7 +389,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B49A9EA1960B31100A03158 /* NSURLSessionServiceTests.m in Sources */,
-				7BC7253D197446A30097FF1E /* AFNetworkingServiceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,6 +601,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7BF5061419745D54009153BC /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7BF5061519745D54009153BC /* Model.xcdatamodel */,
+			);
+			currentVersion = 7BF5061519745D54009153BC /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7B49A9B01960B31100A03158 /* Project object */;
 }

@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SCISProgramsTableViewController : UITableViewController
+/**
+ SCISProgramsTableViewController - Shows SCIS programs in table view
+ */
+@interface SCISProgramsTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
 @end

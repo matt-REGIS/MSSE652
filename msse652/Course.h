@@ -2,30 +2,25 @@
 //  Course.h
 //  msse652
 //
-//  Created by echolush on 7/13/14.
+//  Created by echolush on 7/17/14.
 //  Copyright (c) 2014 Matt Ozer. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
 /**
- SCIS Course
+ Course class
  */
-@interface Course : NSObject
+@interface Course : NSManagedObject
 
-/** Holds course Id */
-@property (strong, nonatomic) NSString *cId;
-/** Holds course name */
-@property (strong, nonatomic) NSString *cName;
-
-/**
- Inits course with Id and name
- @param pID
- The Course Id
- @param pName
- The Course name
- @return Program
- */
-- (Course *)initWithId:(NSString *)cId andName:(NSString *)cName;
+/** Course Id*/
+@property (nonatomic, retain) NSNumber * id;
+/** Course name*/
+@property (nonatomic, retain) NSString * name;
+/** Course related program Id*/
+@property (nonatomic, retain) NSNumber * pId;
+/** Course related program name*/
+@property (nonatomic, retain) NSString * pName;
 
 @end

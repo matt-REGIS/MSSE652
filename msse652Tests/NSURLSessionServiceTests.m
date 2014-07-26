@@ -7,7 +7,6 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "NSURLSessionService.h"
 
 @interface NSURLSessionServiceTests : XCTestCase
 
@@ -30,6 +29,7 @@
 - (void)testDownloadPrograms
 {
     NSLog(@"*** Starting %s ***", __PRETTY_FUNCTION__);
+    /*
     NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
     sessionConfig.allowsCellularAccess = YES;
     [sessionConfig setHTTPAdditionalHeaders: @{@"Accept": @"application/json"}];
@@ -46,13 +46,14 @@
                     *done = YES;
                 }] resume];
     });
-    
+    */
     NSLog(@"Ending %s", __PRETTY_FUNCTION__);
 }
 
 - (void)testDownloadCourses
 {
     NSLog(@"*** Starting %s ***", __PRETTY_FUNCTION__);
+    /*
     NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
     sessionConfig.allowsCellularAccess = YES;
     [sessionConfig setHTTPAdditionalHeaders: @{@"Accept": @"application/json"}];
@@ -69,7 +70,7 @@
                     *done = YES;
                 }] resume];
     });
-    
+    */
     NSLog(@"Ending %s", __PRETTY_FUNCTION__);
 }
 

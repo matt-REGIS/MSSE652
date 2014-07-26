@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ UIViewController for second view
+ Demonstrates dismissing second view controller modally
+ */
 @interface SecondViewController : UIViewController
 
 @end
