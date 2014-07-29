@@ -34,3 +34,10 @@ Week 5
 
 - Added Social framework (Mail, Messages, Twitter, Facebook)
 - Added action right bar button item to SCISProgramsViewController
+
+Week 6
+
+- Implemented iCloud sync
+- Added table view to TasksViewController to hold tasks
+- Added right bar button to add tasks
+- Added AddTaskViewController to save tasks
