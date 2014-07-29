@@ -10,6 +10,7 @@
 		6F658A69931E4CC8BB835CBF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72CC6520F45E4D5A9EF29EF8 /* libPods.a */; };
 		7B1BC1AD1984047400A202ED /* MSSE652Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1BC1AC1984047400A202ED /* MSSE652Tests.m */; };
 		7B1BC1AF198421C200A202ED /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B1BC1AE198421C200A202ED /* Social.framework */; };
+		7B3C602219884D09009CC591 /* AddTasksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3C602119884D09009CC591 /* AddTasksViewController.m */; };
 		7B49A9BC1960B31100A03158 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B49A9BB1960B31100A03158 /* Foundation.framework */; };
 		7B49A9BE1960B31100A03158 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B49A9BD1960B31100A03158 /* CoreGraphics.framework */; };
 		7B49A9C01960B31100A03158 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B49A9BF1960B31100A03158 /* UIKit.framework */; };
@@ -54,6 +55,9 @@
 		72CC6520F45E4D5A9EF29EF8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B1BC1AC1984047400A202ED /* MSSE652Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSE652Tests.m; sourceTree = "<group>"; };
 		7B1BC1AE198421C200A202ED /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		7B3C602019884D09009CC591 /* AddTasksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTasksViewController.h; sourceTree = "<group>"; };
+		7B3C602119884D09009CC591 /* AddTasksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTasksViewController.m; sourceTree = "<group>"; };
+		7B3C602319885314009CC591 /* msse652.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = msse652.entitlements; sourceTree = "<group>"; };
 		7B49A9B81960B31100A03158 /* msse652.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = msse652.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B49A9BB1960B31100A03158 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7B49A9BD1960B31100A03158 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -168,6 +172,7 @@
 		7B49A9C11960B31100A03158 /* msse652 */ = {
 			isa = PBXGroup;
 			children = (
+				7B3C602319885314009CC591 /* msse652.entitlements */,
 				7B49A9CD1960B31100A03158 /* Main.storyboard */,
 				7B7294B8196F57AA00DCEFB9 /* domain */,
 				7B9ADF9319670BBA003AA716 /* controllers */,
@@ -229,6 +234,8 @@
 				7BB2AFBC1964875F00290375 /* ContactsViewController.m */,
 				7BB2AFB81964874A00290375 /* TasksViewController.h */,
 				7BB2AFB91964874A00290375 /* TasksViewController.m */,
+				7B3C602019884D09009CC591 /* AddTasksViewController.h */,
+				7B3C602119884D09009CC591 /* AddTasksViewController.m */,
 				7B49A9D01960B31100A03158 /* FirstViewController.h */,
 				7B49A9D11960B31100A03158 /* FirstViewController.m */,
 				7B49A9D31960B31100A03158 /* SecondViewController.h */,
@@ -290,6 +297,13 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Matt Ozer";
 				TargetAttributes = {
+					7B49A9B71960B31100A03158 = {
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
 					7B49A9DB1960B31100A03158 = {
 						TestTargetID = 7B49A9B71960B31100A03158;
 					};
@@ -376,6 +390,7 @@
 				7BB2AFC31964880700290375 /* SCISCoursesTableViewController.m in Sources */,
 				7BB0F57F1978949800DF7E1A /* Program.m in Sources */,
 				7B49A9D51960B31100A03158 /* SecondViewController.m in Sources */,
+				7B3C602219884D09009CC591 /* AddTasksViewController.m in Sources */,
 				7BF5061619745D54009153BC /* Model.xcdatamodeld in Sources */,
 				7BB0F5821978949800DF7E1A /* Course.m in Sources */,
 				7BB2AFC0196487F900290375 /* SCISProgramsTableViewController.m in Sources */,
@@ -510,6 +525,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = msse652/msse652.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "msse652/msse652-Prefix.pch";
 				INFOPLIST_FILE = "msse652/msse652-Info.plist";
@@ -524,6 +541,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = msse652/msse652.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "msse652/msse652-Prefix.pch";
 				INFOPLIST_FILE = "msse652/msse652-Info.plist";

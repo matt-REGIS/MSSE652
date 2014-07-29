@@ -23,7 +23,7 @@
 - (void)initializeService
 {
     // set all logs to trace
-    RKLogConfigureByName("*", RKLogLevelTrace);
+    //RKLogConfigureByName("*", RKLogLevelTrace);
     
     // initialize the object manager
     RKObjectManager *manager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:@"http://regisscis.net"]];

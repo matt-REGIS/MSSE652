@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 /**
- TasksViewController - Second tab in TabViewController
+ TasksViewController - Display tasks that are stored in iCloud
  */
 @interface TasksViewController : UIViewController
 
