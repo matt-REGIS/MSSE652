@@ -30,3 +30,7 @@ Week 4
 - Implement RestKit using CocoaPods
 - Map Program and Course using RestKit to Core Data
 
+Week 5
+
+- Added Social framework (Mail, Messages, Twitter, Facebook)
+- Added action right bar button item to SCISProgramsViewController
