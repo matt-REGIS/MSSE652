@@ -120,7 +120,16 @@
                             <outlet property="delegate" destination="r8w-au-h6I" id="ZdG-yd-rOd"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="SCIS Programs" id="s3D-QF-EY5"/>
+                    <navigationItem key="navigationItem" title="SCIS Programs" id="s3D-QF-EY5">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="5k5-dp-jIl">
+                            <connections>
+                                <action selector="buttonShare:" destination="r8w-au-h6I" id="JHh-Eg-Krt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="rightBarButtonItem" destination="5k5-dp-jIl" id="2D4-hp-gEL"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aiO-Lw-XBk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

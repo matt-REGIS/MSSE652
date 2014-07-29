@@ -10,10 +10,13 @@
 #import "SCISCoursesTableViewController.h"
 #import <RestKit/RestKit.h>
 #import "Program.h"
+#import <Social/Social.h>
 
 @interface SCISProgramsTableViewController ()
 //Fetched results controller for retrieving objects from core data
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsControllerProgram;
+//Right bar button action item to open share menu
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *rightBarButtonItem;
 @end
 
 @implementation SCISProgramsTableViewController
@@ -155,5 +158,63 @@
     // The fetch controller has sent all current change notifications, so tell the table view to process all updates.
     [self.tableView endUpdates];
 }
+
+#pragma mark - Actions
+- (IBAction)buttonShare:(UIBarButtonItem *)sender
+{
+    //Init an activity indicator to show that a task is in progress
+    UIActivityIndicatorView *activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    //Init a bar button item with activity indicator as its view
+    UIBarButtonItem *rightBarButtonItemActivity = [[UIBarButtonItem alloc] initWithCustomView:activityView];
+    //Set the nav bar's right bar button item to activity view
+    self.navigationItem.rightBarButtonItem = rightBarButtonItemActivity;
+    //Start animation
+    [activityView startAnimating];
+    
+    //Create a queue for animation
+    dispatch_queue_t queue = dispatch_queue_create("openActivityIndicatorQueue", NULL);
+    
+    //Run asynchronously
+    dispatch_async(queue, ^{
+        //Set custom message with numbered program names
+        NSString *head = @"SCIS Programs\n";
+        NSString *programList = @"";
+        NSUInteger count = 1;
+        for(Program *program in self.fetchedResultsControllerProgram.fetchedObjects) {
+            NSString *number = [NSString stringWithFormat:@"%lu. ", (unsigned long)count];
+            programList = [[[programList stringByAppendingString:number] stringByAppendingString:program.name] stringByAppendingString:@"\n"];
+            count++;
+        }
+        head = [head stringByAppendingString:programList];
+        NSString *textToShare = [head stringByAppendingString:@"\nRetrieved from\n"];
+        
+        //Create the image to share
+        UIImage *imageToShare = [UIImage imageNamed:@"REGIS"];
+        //Create the url to share
+        NSURL *url = [NSURL URLWithString:kProgramLocationURL];
+        //Create array that holds the text, url and image to share
+        NSArray *activityItems = [[NSArray alloc] initWithObjects:textToShare, url, imageToShare, nil];
+        //Init activity service to feed the text, url and image to share
+        UIActivity *activity = [[UIActivity alloc] init];
+        //Create array of activity to feed into UIActivityViewController
+        NSArray *applicationActivities = [[NSArray alloc] initWithObjects:activity, nil];
+        //Init the UIActivityViewController with array of activities
+        UIActivityViewController *activityVC =
+        [[UIActivityViewController alloc] initWithActivityItems:activityItems
+                                          applicationActivities:applicationActivities];
+        //Specify the types of services that should be excluded
+        activityVC.excludedActivityTypes = @[UIActivityTypeAddToReadingList, UIActivityTypeCopyToPasteboard, UIActivityTypeSaveToCameraRoll, UIActivityTypeAssignToContact, UIActivityTypePrint, UIActivityTypeAirDrop];
+        //Call the main queue to perform UI operations
+        dispatch_async(dispatch_get_main_queue(), ^{
+            //Stop animation
+            [activityView stopAnimating];
+            //Present activity window
+            [self presentViewController:activityVC animated:YES completion:nil];
+            //Set back the right bar button item to its original state
+            self.navigationItem.rightBarButtonItem = self.rightBarButtonItem;
+        });
+    });
+}
+#pragma mark -
 
 @end

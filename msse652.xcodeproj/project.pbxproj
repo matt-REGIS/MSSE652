@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6F658A69931E4CC8BB835CBF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72CC6520F45E4D5A9EF29EF8 /* libPods.a */; };
 		7B1BC1AD1984047400A202ED /* MSSE652Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1BC1AC1984047400A202ED /* MSSE652Tests.m */; };
+		7B1BC1AF198421C200A202ED /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B1BC1AE198421C200A202ED /* Social.framework */; };
 		7B49A9BC1960B31100A03158 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B49A9BB1960B31100A03158 /* Foundation.framework */; };
 		7B49A9BE1960B31100A03158 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B49A9BD1960B31100A03158 /* CoreGraphics.framework */; };
 		7B49A9C01960B31100A03158 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B49A9BF1960B31100A03158 /* UIKit.framework */; };
@@ -52,6 +53,7 @@
 		08FBB17E47554735939E26EC /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		72CC6520F45E4D5A9EF29EF8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B1BC1AC1984047400A202ED /* MSSE652Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSE652Tests.m; sourceTree = "<group>"; };
+		7B1BC1AE198421C200A202ED /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		7B49A9B81960B31100A03158 /* msse652.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = msse652.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B49A9BB1960B31100A03158 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7B49A9BD1960B31100A03158 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -99,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B1BC1AF198421C200A202ED /* Social.framework in Frameworks */,
 				7BB8CD061974830500EA80CF /* CoreData.framework in Frameworks */,
 				7BB8CD04197482FB00EA80CF /* SystemConfiguration.framework in Frameworks */,
 				7BB8CD02197482F300EA80CF /* CFNetwork.framework in Frameworks */,
@@ -147,6 +150,7 @@
 		7B49A9BA1960B31100A03158 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7B1BC1AE198421C200A202ED /* Social.framework */,
 				7BB8CD051974830500EA80CF /* CoreData.framework */,
 				7BB8CD03197482FB00EA80CF /* SystemConfiguration.framework */,
 				7BB8CD01197482F300EA80CF /* CFNetwork.framework */,
