@@ -180,6 +180,70 @@
             </objects>
             <point key="canvasLocation" x="669" y="1545"/>
         </scene>
+        <!--Message View Controller-->
+        <scene sceneID="RD5-c7-XPY">
+            <objects>
+                <viewController id="Ox4-dI-LBa" customClass="MessageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="axh-JH-4uY"/>
+                        <viewControllerLayoutGuide type="bottom" id="9AV-Ra-Qqn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AfF-Nn-CK8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="rRn-kK-92I">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="354"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CELLIDENTIFIER" id="x2s-Az-rIS">
+                                        <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x2s-Az-rIS" id="hv2-PC-oV4">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ox4-dI-LBa" id="yfk-rx-AIT"/>
+                                    <outlet property="delegate" destination="Ox4-dI-LBa" id="fMc-pY-fB5"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="rRn-kK-92I" secondAttribute="trailing" id="0M7-re-RsM"/>
+                            <constraint firstItem="rRn-kK-92I" firstAttribute="top" secondItem="AfF-Nn-CK8" secondAttribute="top" id="IVW-uN-T8s"/>
+                            <constraint firstItem="rRn-kK-92I" firstAttribute="leading" secondItem="AfF-Nn-CK8" secondAttribute="leading" id="n0Z-DP-2ps"/>
+                            <constraint firstItem="9AV-Ra-Qqn" firstAttribute="top" secondItem="rRn-kK-92I" secondAttribute="bottom" constant="165" id="pFL-vk-OTK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ohF-LS-A3g">
+                        <nil key="title"/>
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="ETS-mH-ZkT">
+                            <rect key="frame" x="10" y="7" width="256" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Send" id="zPh-oX-LsX">
+                            <connections>
+                                <action selector="actionSend:" destination="Ox4-dI-LBa" id="kKb-rE-tP9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="outletBtnSend" destination="zPh-oX-LsX" id="FgI-u9-dlt"/>
+                        <outlet property="outletTextField" destination="ETS-mH-ZkT" id="2WA-La-mgV"/>
+                        <outlet property="tableView" destination="rRn-kK-92I" id="inv-n0-1VO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YGg-33-B4W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1195" y="2213"/>
+        </scene>
         <!--Contacts View Controller - Contacts-->
         <scene sceneID="W3I-pn-N6e">
             <objects>
@@ -326,6 +390,7 @@
                         <segue destination="3uR-W9-9pJ" kind="relationship" relationship="viewControllers" id="M8t-EP-wfW"/>
                         <segue destination="jgr-Vv-lQg" kind="relationship" relationship="viewControllers" id="SWX-JG-Qto"/>
                         <segue destination="Ujg-K3-wUV" kind="relationship" relationship="viewControllers" id="TOP-oR-eVG"/>
+                        <segue destination="qz1-zi-y1R" kind="relationship" relationship="viewControllers" id="fXv-zg-hh9"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNP-y4-bzi" sceneMemberID="firstResponder"/>
@@ -368,6 +433,29 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jnk-vk-sEs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1535" y="54"/>
+        </scene>
+        <!--Navigation Controller - Chat-->
+        <scene sceneID="qxk-dJ-Xn2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qz1-zi-y1R" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Chat" id="bFu-tt-j4q"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="q7k-em-RQy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="6dv-a7-qIO">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="Ox4-dI-LBa" kind="relationship" relationship="rootViewController" id="Ewl-8Z-Uaa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IcR-Ap-bJ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="669" y="2213"/>
         </scene>
     </scenes>
     <resources>

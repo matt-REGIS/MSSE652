@@ -36,6 +36,8 @@
 		7BB8CD02197482F300EA80CF /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB8CD01197482F300EA80CF /* CFNetwork.framework */; };
 		7BB8CD04197482FB00EA80CF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB8CD03197482FB00EA80CF /* SystemConfiguration.framework */; };
 		7BB8CD061974830500EA80CF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB8CD051974830500EA80CF /* CoreData.framework */; };
+		7BC2B72F1989BD5300D33B72 /* SocketSvc.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC2B72E1989BD5300D33B72 /* SocketSvc.m */; };
+		7BC2B7321989C33600D33B72 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC2B7311989C33600D33B72 /* MessageViewController.m */; };
 		7BC7253B19743C0D0097FF1E /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC7253A19743C0D0097FF1E /* Constants.m */; };
 		7BF5061619745D54009153BC /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7BF5061419745D54009153BC /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
@@ -95,6 +97,10 @@
 		7BB8CD01197482F300EA80CF /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		7BB8CD03197482FB00EA80CF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		7BB8CD051974830500EA80CF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7BC2B72D1989BD5300D33B72 /* SocketSvc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketSvc.h; sourceTree = "<group>"; };
+		7BC2B72E1989BD5300D33B72 /* SocketSvc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketSvc.m; sourceTree = "<group>"; };
+		7BC2B7301989C33600D33B72 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		7BC2B7311989C33600D33B72 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		7BC7253919743C0D0097FF1E /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		7BC7253A19743C0D0097FF1E /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		7BF5061519745D54009153BC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -175,6 +181,7 @@
 				7B3C602319885314009CC591 /* msse652.entitlements */,
 				7B49A9CD1960B31100A03158 /* Main.storyboard */,
 				7B7294B8196F57AA00DCEFB9 /* domain */,
+				7BC2B72C1989BD1000D33B72 /* services */,
 				7B9ADF9319670BBA003AA716 /* controllers */,
 				7B49A9D61960B31100A03158 /* Images.xcassets */,
 				7B49A9C21960B31100A03158 /* Supporting Files */,
@@ -244,8 +251,19 @@
 				7BB2AFBF196487F900290375 /* SCISProgramsTableViewController.m */,
 				7BB2AFC11964880700290375 /* SCISCoursesTableViewController.h */,
 				7BB2AFC21964880700290375 /* SCISCoursesTableViewController.m */,
+				7BC2B7301989C33600D33B72 /* MessageViewController.h */,
+				7BC2B7311989C33600D33B72 /* MessageViewController.m */,
 			);
 			name = controllers;
+			sourceTree = "<group>";
+		};
+		7BC2B72C1989BD1000D33B72 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				7BC2B72D1989BD5300D33B72 /* SocketSvc.h */,
+				7BC2B72E1989BD5300D33B72 /* SocketSvc.m */,
+			);
+			name = services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,7 +411,9 @@
 				7B3C602219884D09009CC591 /* AddTasksViewController.m in Sources */,
 				7BF5061619745D54009153BC /* Model.xcdatamodeld in Sources */,
 				7BB0F5821978949800DF7E1A /* Course.m in Sources */,
+				7BC2B7321989C33600D33B72 /* MessageViewController.m in Sources */,
 				7BB2AFC0196487F900290375 /* SCISProgramsTableViewController.m in Sources */,
+				7BC2B72F1989BD5300D33B72 /* SocketSvc.m in Sources */,
 				7BB2AFBD1964875F00290375 /* ContactsViewController.m in Sources */,
 				7BC7253B19743C0D0097FF1E /* Constants.m in Sources */,
 				7BB2AFBA1964874A00290375 /* TasksViewController.m in Sources */,
