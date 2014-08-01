@@ -46,3 +46,9 @@ Week 7
 
 - Created SocketSvc to connect to chat server using NSStream
 - Created MessageViewController to hold a tableview for messages and a send button
+
+Week 8
+
+- Removed SocketSvc
+- Implemented SocketRocket library
+- MessageViewController is now SRWebSocketDelegate
