@@ -41,3 +41,8 @@ Week 6
 - Added table view to TasksViewController to hold tasks
 - Added right bar button to add tasks
 - Added AddTaskViewController to save tasks
+
+Week 7
+
+- Created SocketSvc to connect to chat server using NSStream
+- Created MessageViewController to hold a tableview for messages and a send button
