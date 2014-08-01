@@ -7,17 +7,17 @@
 //
 
 #import "MessageViewController.h"
-#import "SocketSvc.h"
+#import "SRWebSocket.h"
 
-@interface MessageViewController () <SocketSvcDelegate, UITextFieldDelegate>
+@interface MessageViewController () <UITextFieldDelegate, SRWebSocketDelegate>
 //tableView outlet
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 //textView outlet
 @property (weak, nonatomic) IBOutlet UITextField *outletTextField;
-//Socket service
-@property (strong, nonatomic) SocketSvc *service;
 //Array to hold messages
 @property (strong, nonatomic) NSMutableArray *arrayMessages;
+//webSocket variable for SocketRocket
+@property (strong, nonatomic) SRWebSocket *webSocket;
 //Right bar button outlet to send messages
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *outletBtnSend;
 @end
@@ -25,20 +25,25 @@
 @implementation MessageViewController
 
 #pragma mark - Lazy Instantiations
-- (SocketSvc *)service
-{
-    if(!_service) {
-        _service = [[SocketSvc alloc] init];
-    }
-    return _service;
-}
-
 - (NSMutableArray *)arrayMessages
 {
     if(!_arrayMessages) {
         _arrayMessages = [[NSMutableArray alloc] init];
     }
     return _arrayMessages;
+}
+
+- (SRWebSocket *)webSocket
+{
+    if(!_webSocket) {
+        //set the server url with app name
+        NSString *url = [kHost stringByAppendingString:[[NSString stringWithFormat:@":%@", @(kPort)] stringByAppendingString:@"/chat"]];
+        //init webSocker
+        _webSocket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
+        //set delegate
+        _webSocket.delegate = self;
+    }
+    return _webSocket;
 }
 #pragma mark -
 
@@ -47,20 +52,14 @@
     [super viewDidLoad];
     //set textView delegate to self
     self.outletTextField.delegate = self;
-    //set service delegate to self
-    self.service.delegate = self;
-    //set service variables from Constants.h
-    self.service.host = kHost;
-    self.service.port = kPort;
-    //connect to chat server
-	[self.service connect];
-    //Join chat with device name
-    [self.service joinChat:[[UIDevice currentDevice] name]];
+    
     //add observer for textfield's text did change to enable and disable send button
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(textFieldChanged)
                                                  name:UITextFieldTextDidChangeNotification
                                                object:self.outletTextField];
+    
+    [self.webSocket open];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -68,8 +67,9 @@
     [super viewWillDisappear:animated];
     //remove all observers
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    //disconnect from chat server
-    [self.service disconnect];
+    //close connection
+    [self.webSocket close];
+    _webSocket = nil;
 }
 
 - (void)didReceiveMemoryWarning
@@ -81,11 +81,13 @@
 - (IBAction)actionSend:(UIBarButtonItem *)sender
 {
     //send text fields text to server
-    [self.service send:self.outletTextField.text];
+    NSString *msgToSend = [[[[UIDevice currentDevice] name] stringByAppendingString:@":"] stringByAppendingString:self.outletTextField.text];
+    [self.webSocket send:msgToSend];
     //clear text field
     self.outletTextField.text = @"";
     //disable send button
     self.outletBtnSend.enabled = NO;
+    [self addMessage:msgToSend];
 }
 
 - (void)textFieldChanged
@@ -132,8 +134,7 @@
     return cell;
 }
 
-#pragma mark - SocketSvcDelegate Method
--(void)gotMessage:(NSString *)msg
+-(void)addMessage:(NSString *)msg
 {
     //add incoming message to array
     [self.arrayMessages addObject:msg];
@@ -151,13 +152,40 @@
                                       animated:YES];
     }
 }
-#pragma mark -
 
 #pragma mark - TextFieldDelegate Methods
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     //call send button when keyboard's return button is touch
     [self actionSend:nil];
     return YES;
+}
+#pragma mark -
+
+#pragma mark - SRWebSocketDelegate Methods
+- (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message
+{
+    NSLog(@"Received msg: %@", message);
+    [self addMessage:message];
+}
+
+- (void)webSocketDidOpen:(SRWebSocket *)webSocket
+{
+    NSLog(@"Connected");
+}
+
+- (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error
+{
+    //Create the alert to present to user
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error in stream!" message:[NSString stringWithFormat:@"Error %@: description: %@", @([error code]), [error localizedDescription]] delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+    //Show alert
+    [alert show];
+}
+
+- (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean
+{
+    NSLog(@"WebSocket closed");
+    //set to nil
+    _webSocket = nil;
 }
 #pragma mark -
 

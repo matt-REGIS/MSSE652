@@ -14,7 +14,7 @@ NSString *const kProgramLocationURL = @"http://regisscis.net/Regis2/webresources
 NSString *const kCourseLocationURL = @"http://regisscis.net/Regis2/webresources/regis2.course";
 NSString *const kTasks = @"Tasks";
 NSString *const kNewNote = @"New Note";
-NSString *const kHost = @"192.168.1.100";
-int const kPort = 8080;
+NSString *const kHost = @"ws://192.168.1.100";
+int const kPort = 9000;
 
 @end
