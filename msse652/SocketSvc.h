@@ -39,12 +39,6 @@
  */
 - (void)connect;
 /**
- Joins chat
- @param name
-        name to join the chat with
- */
-- (void)joinChat:(NSString *)name;
-/**
  Sends message
  @param msg
         message to send

@@ -8,7 +8,7 @@
 
 #import "SocketSvc.h"
 
-@interface SocketSvc()
+@interface SocketSvc() <UIAlertViewDelegate>
 // To retain input stream
 @property (strong, nonatomic) NSInputStream *inputStream;
 // To retain output stream
@@ -43,20 +43,10 @@
     [self.outputStream open];
 }
 
-- (void)joinChat:(NSString *)name
-{
-    //Format string to tell server that it is a join command
-    NSString *response  = [NSString stringWithFormat:@"iam:%@", name];
-    //Create a data object initialized with strings contents
-	NSData *data = [[NSData alloc] initWithData:[response dataUsingEncoding:NSASCIIStringEncoding]];
-    //Write the contents of the data to buffer
-	[self.outputStream write:[data bytes] maxLength:[data length]];
-}
-
 - (void)send:(NSString *)msg
 {
-    //Format string to tell server that it is a message command
-    NSString *response  = [NSString stringWithFormat:@"msg:%@", msg];
+    //Format string with a new line
+    NSString *response  = [NSString stringWithFormat:@"%@\n", msg];
     //Create a data object initialized with strings contents
 	NSData *data = [[NSData alloc] initWithData:[response dataUsingEncoding:NSASCIIStringEncoding]];
     //Write the contents of the data to buffer
@@ -135,7 +125,7 @@
             //NSError object encapsulating information about any error that took place
             NSError *theError = [aStream streamError];
             //Create the alert to present to user
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error reading stream!" message:[NSString stringWithFormat:@"Error %@: description: %@", @([theError code]), [theError localizedDescription]] delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error reading stream!" message:[NSString stringWithFormat:@"Error %@: description: %@", @([theError code]), [theError localizedDescription]] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Reconnect", nil];
             //Show alert
             [alert show];
             //Close connection
@@ -146,8 +136,20 @@
             NSLog(@"No Event");
             break;
         default:
-            NSLog(@"Unknown event");
             break;
+    }
+}
+#pragma mark -
+
+#pragma mark - UIALERTVIEWDELEGATE METHODS
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    //get clicked button text
+    NSString *buttonText = [alertView buttonTitleAtIndex:buttonIndex];
+    //if user clicked reconnect then connect again
+    if([buttonText isEqualToString:@"Reconnect"] && buttonIndex == 1) {
+        NSLog(@"Reconnecting");
+        [self connect];
     }
 }
 #pragma mark -

@@ -54,8 +54,6 @@
     self.service.port = kPort;
     //connect to chat server
 	[self.service connect];
-    //Join chat with device name
-    [self.service joinChat:[[UIDevice currentDevice] name]];
     //add observer for textfield's text did change to enable and disable send button
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(textFieldChanged)
