@@ -110,8 +110,11 @@ static NSString *newSHA1String(const char *bytes, size_t length) {
     assert(length >= 0);
     assert(length <= UINT32_MAX);
     CC_SHA1(bytes, (CC_LONG)length, md);
-    
-    return [[NSData dataWithBytes:md length:CC_SHA1_DIGEST_LENGTH] base64Encoding];
+    NSData *plainData = [NSData dataWithBytes:md length:CC_SHA1_DIGEST_LENGTH];
+    NSString *base64String = [plainData base64EncodedStringWithOptions:0];
+    return base64String;
+
+    //return [[NSData dataWithBytes:md length:CC_SHA1_DIGEST_LENGTH] base64Encoding];
 }
 
 @implementation NSData (SRWebSocket)
